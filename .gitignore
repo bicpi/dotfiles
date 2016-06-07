@@ -1,5 +1,8 @@
-# Compiled Python files
-*.pyc
+# IDEs
+.idea/
+
+# Vagrant
+.vagrant/
 
 # Folder view configuration files
 .DS_Store
