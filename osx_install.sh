@@ -10,11 +10,3 @@ xcode-select --install
 source ./.osx
 
 ./brew.sh
-
-## SSH Keygen
-# $ ssh-keygen -t rsa -C 'your@email.com'
-#  [ follow prompts ]
-# $ pbcopy < ~/.ssh/id_rsa.pub
-
-## Git config 
-# $ cp .gitconfig.local.example ~/.gitconfig.local
