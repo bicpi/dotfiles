@@ -5,7 +5,7 @@ if [[ $? != 0 ]] ; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
     brew update
-    brew upgrade --all
+    brew upgrade
 fi
 
 brew bundle

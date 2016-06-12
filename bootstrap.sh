@@ -99,32 +99,32 @@ link_file () {
 }
 
 function doIt() {
-	info 'installing dotfiles'
+  info 'installing dotfiles'
 
-	local overwrite_all=false backup_all=false skip_all=false
+  local overwrite_all=false backup_all=false skip_all=false
 
-	for src in .aliases .bash_profile .bash_prompt .bashrc .curlrc \
-	           .editorconfig .exports .functions .gitattributes .gitconfig \
-						 .gitignore .hushlogin .inputrc .screenrc .wgetrc
-	do
-		dst="$HOME/$src"
-		link_file "`pwd`/$src" "$dst"
-	done
+  for src in .aliases .bash_profile .bash_prompt .bashrc .curlrc \
+             .editorconfig .exports .functions .gitattributes .gitconfig \
+             .gitignore .hushlogin .inputrc .screenrc .wgetrc
+  do
+    dst="$HOME/$src"
+    link_file "`pwd`/$src" "$dst"
+  done
 
-#	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-#	  --exclude "Brewfile" --exclude "osx_install.sh" --exclude ".osx" \
-#		--exclude "brew.sh" \
-#		--exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
-	source ~/.bash_profile;
+#  rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+#    --exclude "Brewfile" --exclude "osx_install.sh" --exclude ".osx" \
+#    --exclude "brew.sh" \
+#    --exclude "README.md" --exclude "LICENSE-MIT.txt" -avh --no-perms . ~;
+  source ~/.bash_profile;
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
-	doIt;
+  doIt;
 else
-	read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
-	echo "";
-	if [[ $REPLY =~ ^[Yy]$ ]]; then
-		doIt;
-	fi;
+  read -p "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1;
+  echo "";
+  if [[ $REPLY =~ ^[Yy]$ ]]; then
+    doIt;
+  fi;
 fi;
 unset doIt;
