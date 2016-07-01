@@ -49,7 +49,7 @@ brew 'homebrew/php/php-cs-fixer'
 mas 'Keynote', id: 409183694
 mas 'ForkLift', id: 412448059
 mas 'TweetDeck', id: 485812721
-mas 'Caffeine', id: 411246225
+# mas 'Caffeine', id: 411246225 # prefer as a cask
 mas 'Snagit', id: 492729790
 mas 'Airmail 3', id: 918858936
 mas 'Wunderlist', id: 410628904
